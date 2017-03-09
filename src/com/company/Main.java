@@ -6,24 +6,68 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Scanner scan = new Scanner(new File("CompStats"));
+        String file = "CompStats";
+        BufferedReader br = null;
+        FileReader rf = null;
 
-        int max=-1;
-        String stats[][] = new String[1000][1000];
-        while(scan.hasNext()){
+       try {
+           rf = new FileReader(file);
+           br = new BufferedReader(rf);
 
-            max++;
-            stats[max][max] = scan.nextLine();
+           String sCurrentLine;
 
+           br = new BufferedReader(new FileReader(file));
+
+           while ((sCurrentLine = br.readLine()) != null) {
+               System.out.println(sCurrentLine);
+           }
+       }
+       catch(IOException e) {
+               e.printStackTrace();
+           }
+
+       finally {
+
+       }
+               /*Scanner scan = new Scanner(new File("CompStats"));
+            int max=-1;
+            String stats[][] = new String[1000][1000];
+            while(scan.hasNext()){
+
+                max++;
+                stats[max][max] = scan.nextLine();
+
+            }
+            scan.close();
+            System.out.print(stats);
         }
-        scan.close();
+        catch(FileNotFoundException e){
 
-        for(int i = 0; i<= stats.length; i++){
-            String s = stats.toString(i);
-            teams sea = new teams(stats);
+            System.out.print("file not found");
+        }
+        finally{
+
+            Scanner scan = new Scanner(new File("CompStats"));
+            int max=-1;
+            String stats[][] = new String[1000][1000];
+            while(scan.hasNext()){
+
+                max++;
+                stats[max][max] = scan.nextLine();
+
+            }
+            scan.close();
+            System.out.print(stats);
+        }*/
+
+
+        ;
+        //for(int i = 0; i<= stats.length; i++){
+           // String s = stats.toString(i);
+           // teams sea = new teams(stats);
         }
 
-
+        //stats.sort();
 
     }
-}
+
